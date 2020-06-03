@@ -25,13 +25,15 @@ replaceAllButton.addEventListener('click', function() {
     let findText = findInput.value
     let replacementText = replaceInput.value
 
-    for (let index = 0; index < rowElements.length; index += 1) {
-        cellElements = getCellElements(rowElements[index])
+    for (let rowIndex = 0; rowIndex < rowElements.length; rowIndex += 1) {
+        cellElements = getCellElements(rowElements[rowIndex])
 
-        for (let newIndex = 0; newIndex < cellElements.length; newIndex += 1) {
-            if (cellElements[newIndex].innerHTML.includes(findText)) {
-                cellElements[newIndex].innerText.replace(findText,replacementText)
-                console.log('text found at row ', index, 'and column ', newIndex )
+        for (let columnIndex = 0; columnIndex < cellElements.length; columnIndex += 1) {
+            if (cellElements[columnIndex].innerHTML.includes(findText)) {
+                newText = cellElements[columnIndex].innerText.replace(findText,replacementText)
+                cellElements[columnIndex].innerHTML = newText
+                console.log('text found at row ', rowIndex, 'and column ', columnIndex )
+                
             }
         }
     }
