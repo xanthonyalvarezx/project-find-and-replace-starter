@@ -24,18 +24,28 @@ function getCellElements(currentRowElement) {
 replaceAllButton.addEventListener('click', function() {
     let findText = findInput.value
     let replacementText = replaceInput.value
-
+    
+    
     for (let rowIndex = 0; rowIndex < rowElements.length; rowIndex += 1) {
         cellElements = getCellElements(rowElements[rowIndex])
-
+        
         for (let columnIndex = 0; columnIndex < cellElements.length; columnIndex += 1) {
-            if (cellElements[columnIndex].innerHTML.includes(findText)) {
+            while (cellElements[columnIndex].innerHTML.includes(findText)) {
                 newText = cellElements[columnIndex].innerText.replace(findText,replacementText)
                 cellElements[columnIndex].innerHTML = newText
-                console.log('text found at row ', rowIndex, 'and column ', columnIndex )
+                
+                let message = document.createTextNode('text found at row ', rowIndex, 'and column ', columnIndex )
+                
+                
+               
+               
+            }
+                
+                
+                
+                
                 
             }
-        }
     }
 
 })
