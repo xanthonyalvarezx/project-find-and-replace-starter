@@ -35,19 +35,9 @@ replaceAllButton.addEventListener('click', function() {
                 cellElements[columnIndex].innerHTML = newText
                 
                 let message = document.createTextNode('text found at row ', rowIndex, 'and column ', columnIndex )
-                
-                
-               
-               
             }
-                
-                
-                
-                
-                
-            }
+        }
     }
-
 })
 
 
